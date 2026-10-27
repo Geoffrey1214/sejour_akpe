@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akpé Séjours | Logez-vous partout en Afrique</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F6F7FB;--surface:#fff;--ink:#17193A;--muted:#5A5E7A;--line:#DDE0EC;--brand:#232A6B;--brand-ink:#fff;--sun:#F2B01E;--leaf:#1E7A5A;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10122B;--surface:#1A1D40;--ink:#F1F2FA;--muted:#A9ADC9;--line:#2D3160;--brand:#F2B01E;--brand-ink:#17193A;--leaf:#4FC79A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10122B;--surface:#1A1D40;--ink:#F1F2FA;--muted:#A9ADC9;--line:#2D3160;--brand:#F2B01E;--brand-ink:#17193A;--leaf:#4FC79A;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:18px;font-weight:500;font-size:15px;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.cur{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px Figtree,sans-serif;cursor:pointer}
+.band{height:10px;background:repeating-linear-gradient(90deg,var(--sun) 0 28px,var(--brand) 28px 56px,var(--leaf) 56px 84px,var(--ink) 84px 92px)}
+.hero{padding:44px 0 36px}
+.hero h1{font-size:clamp(34px,7vw,64px);font-weight:800;max-width:14ch}
+.hero p{color:var(--muted);max-width:46ch;margin:14px 0 26px;font-size:18px}
+.search{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px}
+.field{display:flex;flex-direction:column;gap:2px;padding:6px 10px;min-width:0}
+.field label{font-size:13px;color:var(--muted)}
+.field select,.field input{border:0;background:transparent;color:var(--ink);font:500 16px Figtree,sans-serif;padding:2px 0;width:100%;outline-offset:3px}
+.guests{display:flex;align-items:center;gap:10px}
+.guests button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:18px;cursor:pointer}
+.btn{background:var(--brand);color:var(--brand-ink);border:0;border-radius:12px;padding:0 26px;font:600 16px Figtree,sans-serif;cursor:pointer;min-height:48px}
+.btn:hover{filter:brightness(1.1)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+section{padding:34px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.head h2{font-size:clamp(24px,4vw,34px)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 16px;font:500 14px Figtree,sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.photo{aspect-ratio:4/3;display:flex;align-items:flex-end;padding:10px}
+.photo span{background:var(--surface);color:var(--ink);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:600}
+.card .body{padding:14px}
+.card h3{font-size:18px}
+.card .city{color:var(--muted);font-size:14px;margin:2px 0 10px}
+.price{display:flex;justify-content:space-between;align-items:baseline}
+.price b{font-size:18px}
+.empty{padding:30px;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.why div{border-left:4px solid var(--sun);padding-left:14px}
+.why h3{font-size:18px;margin-bottom:4px}
+.why p{margin:0;color:var(--muted);font-size:15px}
+.host{background:var(--brand);color:var(--brand-ink);border-radius:20px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.host h2{font-size:clamp(24px,4vw,34px)}
+.host p{margin:8px 0 0;max-width:46ch;opacity:.9}
+.host .btn{background:var(--sun);color:#17193A}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0 30px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none;margin-right:14px}
+@media(max-width:860px){.search{grid-template-columns:1fr 1fr}.search .field:first-child{grid-column:1/-1}.btn{grid-column:1/-1}}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<div class="band"></div>
+<div class="wrap">
+<header>
+<a class="logo" href="#">Akpé Séjours</a>
+<nav>
+<a href="#logements">Hébergements</a><a href="#">Transferts</a><a href="#hote">Devenir hôte</a>
+<button class="cur" id="cur" type="button" aria-label="Changer de devise">FCFA</button>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Un chez-vous partout en Afrique</h1>
+<p>Réservez un logement chez l’habitant ou à l’hôtel, et payez par Mobile Money ou par carte.</p>
+<form class="search" id="form">
+<div class="field"><label for="dest">Destination</label>
+<select id="dest"><option value="">Toutes les villes</option></select></div>
+<div class="field"><label for="d1">Arrivée</label><input type="date" id="d1"></div>
+<div class="field"><label for="d2">Départ</label><input type="date" id="d2"></div>
+<div class="field"><label>Voyageurs</label>
+<div class="guests"><button type="button" id="m" aria-label="Moins">−</button><span id="g">2</span><button type="button" id="p" aria-label="Plus">+</button></div></div>
+<button class="btn" type="submit">Rechercher</button>
+</form>
+</div>
+
+<section id="logements">
+<div class="head">
+<h2>Logements disponibles</h2>
+<div class="chips" id="chips"></div>
+</div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section>
+<h2 style="margin-bottom:18px;font-size:clamp(24px,4vw,34px)">Pourquoi réserver ici</h2>
+<div class="why">
+<div><h3>Paiement local</h3><p>Moov Money, T-Money, Visa et Mastercard.</p></div>
+<div><h3>Confirmation immédiate</h3><p>Votre séjour est validé dès le paiement.</p></div>
+<div><h3>Hôte joignable</h3><p>Posez vos questions avant et pendant le séjour.</p></div>
+<div><h3>Annulation en un clic</h3><p>Depuis votre espace réservations.</p></div>
+</div>
+</section>
+
+<section id="hote">
+<div class="host">
+<div><h2>Mettez votre logement en ligne</h2><p>Recevez des voyageurs, fixez vos prix et gérez vos réservations depuis votre téléphone.</p></div>
+<button class="btn" type="button">Devenir hôte</button>
+</div>
+</section>
+</div>
+
+<footer><div class="wrap">
+<div>© 2026 Akpé Séjours. Tous droits réservés.</div>
+<div><a href="#">Mentions légales</a><a href="#">CGU</a><a href="#">Confidentialité</a><a href="#">Aide</a></div>
+</div></footer>
+
+<script>
+const SUPABASE_URL="https://mzigwybhjwzkooxgkulz.supabase.co";
+const SUPABASE_KEY="sb_publishable_1v49dLQJZYHh_tu5r3MbFQ_0wPzXYiO";
+const TYPES={hotel:"Hôtel",appartement:"Appartement",villa:"Villa",auberge:"Auberge"};
+const PALETTE=["#232A6B,#F2B01E","#1E7A5A,#F2B01E","#1E7A5A,#232A6B","#F2B01E,#232A6B","#232A6B,#1E7A5A","#F2B01E,#1E7A5A"];
+let L=[
+{n:"Hôtel Le Palmier",c:"Lomé",t:"Hôtel",p:28000,r:4.6,a:"#232A6B,#F2B01E"},
+{n:"Appartement Kara Centre",c:"Kara",t:"Appartement",p:18000,r:4.8,a:"#1E7A5A,#F2B01E"},
+{n:"Villa des Monts",c:"Kpalimé",t:"Villa",p:45000,r:4.9,a:"#1E7A5A,#232A6B"},
+{n:"Auberge du Fleuve",c:"Cotonou",t:"Auberge",p:12000,r:4.3,a:"#F2B01E,#232A6B"},
+{n:"Studio Plateau",c:"Abidjan",t:"Appartement",p:32000,r:4.5,a:"#232A6B,#1E7A5A"},
+{n:"Villa Teranga",c:"Dakar",t:"Villa",p:70000,r:4.7,a:"#F2B01E,#1E7A5A"},
+{n:"Hôtel du Wouri",c:"Douala",t:"Hôtel",p:35000,r:4.4,a:"#232A6B,#F2B01E"},
+{n:"Auberge Les Cascades",c:"Kpalimé",t:"Auberge",p:9000,r:4.6,a:"#1E7A5A,#F2B01E"}];
+const types=["Tous","Hôtel","Appartement","Villa","Auberge"];
+let type="Tous",cur="FCFA",guests=2;
+const $=id=>document.getElementById(id);
+function fillDest(){const s=$("dest"),v=s.value;s.length=1;[...new Set(L.map(x=>x.c))].forEach(c=>s.add(new Option(c,c)));s.value=v}
+function money(v){return cur==="FCFA"?v.toLocaleString("fr-FR")+" FCFA":Math.round(v/655.957).toLocaleString("fr-FR")+" €"}
+function chips(){$("chips").innerHTML="";types.forEach(t=>{const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=t;b.setAttribute("aria-pressed",t===type);b.onclick=()=>{type=t;chips();render()};$("chips").append(b)})}
+function render(){
+const d=$("dest").value;
+const rows=L.filter(x=>(!d||x.c===d)&&(type==="Tous"||x.t===type));
+$("grid").innerHTML=rows.length?rows.map(x=>`<article class="card"><div class="photo" style="background:linear-gradient(135deg,${x.a.split(",")[0]},${x.a.split(",")[1]})"><span>${x.t}</span></div><div class="body"><h3>${x.n}</h3><div class="city">${x.c}${x.r?" · ★ "+x.r:""}</div><div class="price"><b>${money(x.p)}</b><span>par nuit</span></div></div></article>`).join(""):`<div class="empty">Aucun logement pour cette recherche. Essayez une autre ville ou un autre type.</div>`}
+$("form").onsubmit=e=>{e.preventDefault();render();$("logements").scrollIntoView({behavior:"smooth"})};
+$("dest").onchange=render;
+$("m").onclick=()=>{guests=Math.max(1,guests-1);$("g").textContent=guests};
+$("p").onclick=()=>{guests=Math.min(12,guests+1);$("g").textContent=guests};
+$("cur").onclick=()=>{cur=cur==="FCFA"?"€":"FCFA";$("cur").textContent=cur;render()};
+const today=new Date().toISOString().slice(0,10);$("d1").min=today;$("d2").min=today;
+async function load(){
+try{
+const r=await fetch(SUPABASE_URL+"/rest/v1/listings?status=eq.publie&select=id,title,type,city,price_fcfa&order=created_at.desc",{headers:{apikey:SUPABASE_KEY}});
+if(!r.ok)throw new Error(r.status);
+const d=await r.json();
+if(d.length){L=d.map((x,i)=>({n:x.title,c:x.city,t:TYPES[x.type]||x.type,p:x.price_fcfa,a:PALETTE[i%PALETTE.length]}));fillDest();render()}
+}catch(e){console.error("Supabase indisponible, données d’exemple affichées",e)}
+}
+fillDest();chips();render();load();
+</script>
+</body>
+</html>
